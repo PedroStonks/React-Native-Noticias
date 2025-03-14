@@ -6,6 +6,8 @@ class Noticias extends Component {
   constructor(props) {
     super(props);
     this.state = {
+
+     
       noticiaAtual: {
         titulo: 'Mega-acidente de trem na Índia mata 275 pessoas',
         imagem: 'https://midias.correiobraziliense.com.br/_midias/jpg/2023/12/27/cbifot250820230472-33746900.jpg',
@@ -43,16 +45,14 @@ class Noticias extends Component {
   render() {
     return (
       <View style={estilos.container}>
+        <View style={{marginTop:25,backgroundColor:'azul'}}><Text>StonksBet</Text></View>
         <Noticia noticia={this.state.noticiaAtual} />
-        <FlatList
-          data={this.state.noticias}
-          keyExtractor={(item, index) => index.toString()}
-          renderItem={({ item }) => (
-            <View style={estilos.botaoContainer}>
-              <Button title={item.titulo} onPress={() => this.atualizarNoticia(item)} />
-            </View>
-          )}
-        />
+        
+   
+
+
+
+
       </View>
     );
   }
@@ -74,6 +74,12 @@ const estilos = StyleSheet.create({
     padding: 10,
     backgroundColor: '#fff',
     alignItems: 'center',
+  },
+  logo:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    color: '#333',
   },
   noticiaContainer: {
     alignItems: 'center',
